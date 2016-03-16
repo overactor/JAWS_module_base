@@ -1,4 +1,4 @@
-package jaws.module.base;
+package jaws.module.net;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
