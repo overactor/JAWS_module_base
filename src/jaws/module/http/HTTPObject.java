@@ -4,13 +4,13 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * An interface to represent both http responses and requests.
- * 
+ *
  * @author Rik
  *
  * @param <T> used to make method chaining possible for inheriting interfaces, should be identical to the inheriting interface.
  */
 public interface HTTPObject<T extends HTTPObject<T>> {
-	
+
 	/**
 	 * Sets the header for the key to the value.
 	 *
@@ -18,10 +18,10 @@ public interface HTTPObject<T extends HTTPObject<T>> {
 	 * @param value the value of the header field.
 	 * @return the HTTP object for method chaining.
 	 * @see jaws.module.http.HTTPRequest
-	 * @see jaws.module.http.HTTPResponse 
+	 * @see jaws.module.http.HTTPResponse
 	 */
 	public T header(String key, String value);
-	
+
 	/**
 	 * Gets the value of a header field for a key.
 	 *
@@ -29,7 +29,7 @@ public interface HTTPObject<T extends HTTPObject<T>> {
 	 * @return the value of the field.
 	 */
 	public String header(String key);
-	
+
 	/**
 	 * Sets the body of the HTTP object.
 	 *
@@ -37,7 +37,7 @@ public interface HTTPObject<T extends HTTPObject<T>> {
 	 * @return the HTTP object for method chaining.
 	 */
 	public T body(byte[] body);
-	
+
 	/**
 	 * Sets the body of the HTTP object.
 	 *
@@ -45,32 +45,32 @@ public interface HTTPObject<T extends HTTPObject<T>> {
 	 * @return the HTTP object for method chaining.
 	 */
 	public T body(String body);
-	
+
 	/**
 	 * Gets the body of the HTTP object.
 	 *
 	 * @return the body of the HTTP object as a byte array.
 	 */
 	public byte[] body();
-	
+
 	/**
 	 * Sets the body of the HTTP object directly as a ByteArrayOutputStream.
-	 * 
+	 *
 	 * @param stream the stream to set the body to.
 	 * @return the body of the HTTP object as a byte array.
 	 */
 	public T body(ByteArrayOutputStream stream);
-	
+
 	/**
 	 * Returns a representation of the HTTP object as a byte array suitable for sending over a socket.
-	 * 
+	 *
 	 * @return the byte array.
 	 */
 	public byte[] getBytes();
-	
+
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	public ByteArrayOutputStream getOutputStream();
