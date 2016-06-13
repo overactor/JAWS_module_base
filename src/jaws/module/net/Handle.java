@@ -17,7 +17,25 @@ import jaws.module.http.RequestMethod;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
 public @interface Handle {
+	/**
+	 * Returns the file extensions that the method can handle.
+	 * 
+	 * @return the file extensions that the method can handle.
+	 */
 	String[] extensions();
+	
+	/**
+	 * Returns the priority of the handler.
+	 * If multiple handlers exist with the same extension and request method, the higher specified priority will be used.
+	 * 
+	 * @return the priority of the handler.
+	 */
 	int priority() default 0;
+	
+	/**
+	 * Returns the request methods that the method can handle.
+	 * 
+	 * @return the request methods that the method can handle.
+	 */
 	RequestMethod[] methods() default {RequestMethod.GET, RequestMethod.HEAD, RequestMethod.OPTIONS, RequestMethod.POST};
 }
