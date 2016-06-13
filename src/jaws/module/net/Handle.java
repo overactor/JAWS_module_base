@@ -7,6 +7,12 @@ import java.lang.annotation.Target;
 
 import jaws.module.http.RequestMethod;
 
+/**
+ * An annotation to specify what types of requests a method can handle. The class containing this method must be annotated with {@link jaws.module.net.ContainsHandler}.
+ * 
+ * @author Roy
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
 public @interface Handle {
