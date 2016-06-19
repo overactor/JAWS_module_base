@@ -8,6 +8,9 @@ import java.io.ByteArrayOutputStream;
  * @author Rik
  *
  * @param <T> used to make method chaining possible for inheriting interfaces, should be identical to the inheriting interface.
+ * 
+ * @see jaws.module.http.HTTPRequest
+ * @see jaws.module.http.HTTPResponse
  */
 public interface HTTPObject<T extends HTTPObject<T>> {
 
@@ -17,8 +20,6 @@ public interface HTTPObject<T extends HTTPObject<T>> {
 	 * @param key the header key.
 	 * @param value the value of the header field.
 	 * @return the HTTP object for method chaining.
-	 * @see jaws.module.http.HTTPRequest
-	 * @see jaws.module.http.HTTPResponse
 	 */
 	public T header(String key, String value);
 
@@ -69,9 +70,9 @@ public interface HTTPObject<T extends HTTPObject<T>> {
 	public byte[] getBytes();
 
 	/**
+	 * Returns a representation of the HTTP object as a byte array stream suitable for sending over a socket.
 	 *
-	 *
-	 * @return
+	 * @return the stream.
 	 */
 	public ByteArrayOutputStream getOutputStream();
 }
